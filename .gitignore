@@ -1,3 +1,7 @@
+# Feve
+build/*
+tmp/*
+
 # JetBrain
 .idea
 
