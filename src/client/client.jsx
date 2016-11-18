@@ -18,6 +18,7 @@ const history = syncHistoryWithStore(hashHistory, store);
 renderDom(Root);
 
 if (module.hot) {
+  //module.hot.accept('./containers/Root', renderDom);
   module.hot.accept('./containers/Root', () => {
     const App = require('./containers/Root').default;
 

@@ -79,7 +79,7 @@ export default {
   ],
 
   module: {
-    loaders: [
+    rules: [
       {
         test   : /\.jsx?$/,
         include: [
@@ -106,24 +106,35 @@ export default {
       },
       {
         test  : /\.css/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          `css-loader?sourceMap!postcss-loader`
-        ),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader        : [
+            'css-loader?sourceMap',
+            'postcss-loader',
+          ],
+        }),
       },
       {
         test  : /\.less$/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          `css-loader?sourceMap!postcss-loader!less-loader`
-        ),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader        : [
+            'css-loader?sourceMap',
+            'postcss-loader',
+            'less-loader',
+          ],
+        }),
       },
       {
         test  : /\.scss/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          `css-loader?sourceMap!postcss-loader!sass-loader`
-        ),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader        : [
+            'css-loader?sourceMap',
+            'postcss-loader',
+            'sass-loader',
+          ],
+        }),
       },
     ],
   },

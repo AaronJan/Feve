@@ -49,7 +49,7 @@ function startDevServer () {
       }
 
       console.log(`Listening at http://${networkConfig.devServer.host}:${networkConfig.devServer.port}/`);
-      console.log('Waiting for Webpck to finish compiling...');
+      console.log('Waiting for Webpack to finish compiling...');
     };
 
     const server = new WebpackDevServer(compiler, devServerConfig.webpackDev);
